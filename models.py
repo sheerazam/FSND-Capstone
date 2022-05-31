@@ -2,7 +2,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from flask_moment import Moment
 from flask import Flask
-from api import SQLALCHEMY_DATABASE_URI
+import os
 
 # database_name = "casting_agency.db"
 # database_path = "postgres://{}:{}@{}/{}".format(
@@ -11,7 +11,7 @@ from api import SQLALCHEMY_DATABASE_URI
 
 app = Flask(__name__)
 moment = Moment(app)
-app.config["SQLALCHEMY_DATABASE_URI"] = SQLALCHEMY_DATABASE_URI
+SQLALCHEMY_DATABASE_URI = os.environ.get('SQLALCHEMY_DATABASE_URI')
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
