@@ -2,11 +2,12 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from flask_moment import Moment
 from flask import Flask
+from api import SQLALCHEMY_DATABASE_URI
 
 # database_name = "casting_agency.db"
 # database_path = "postgres://{}:{}@{}/{}".format(
 #     'postgres', 'root', 'localhost:5432', database_name)
-SQLALCHEMY_DATABASE_URI = 'postgresql://postgres@localhost:5432/casting_agency'
+# SQLALCHEMY_DATABASE_URI = 'postgresql://postgres@localhost:5432/casting_agency'
 
 app = Flask(__name__)
 moment = Moment(app)
