@@ -7,8 +7,8 @@ import json
 from flask_cors import CORS
 import sys
 
-from .models import Movie, Actor, db, app, db_drop_and_create_all
-from .auth import AuthError, requires_auth
+from models import Movie, Actor, db, app, db_drop_and_create_all
+from auth import AuthError, requires_auth
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from flask_moment import Moment
