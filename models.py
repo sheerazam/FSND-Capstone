@@ -17,14 +17,13 @@ db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 
 '''
-setup_db(app)
+ setup_db(app)
     binds a flask application and a SQLAlchemy service
 '''
 
-
-# def setup_db(app):
-    # db.app = app
-    # db.init_app(app)
+def setup_db(app):
+    db.app = app
+    db.init_app(app)
 
 
 '''

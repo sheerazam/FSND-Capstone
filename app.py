@@ -7,7 +7,7 @@ import json
 from flask_cors import CORS
 import sys
 
-from models import Movie, Actor, db, app, db_drop_and_create_all
+from models import Movie, Actor, db_drop_and_create_all, app, SQLALCHEMY_DATABASE_URI
 from auth import AuthError, requires_auth
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
@@ -15,7 +15,7 @@ from flask_moment import Moment
 from flask import Flask
 
 # SQLALCHEMY_DATABASE_URI = 'postgresql://postgres@localhost:5432/casting_agency'
-SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL')
+# SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL')
 
 # app = Flask(__name__)
 # moment = Moment(app)
@@ -25,7 +25,6 @@ SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL')
 # migrate = Migrate(app, db)
 
 # app = Flask(__name__)
-# setup_db(app)
 CORS(app)
 
 '''
@@ -34,7 +33,7 @@ CORS(app)
 !! NOTE THIS MUST BE UNCOMMENTED ON FIRST RUN
 !! Running this function will add one
 '''
-# db_drop_and_create_all()
+db_drop_and_create_all()
 
 # ROUTES
 

@@ -4,17 +4,17 @@ from flask_moment import Moment
 from flask import Flask
 import os
 
-database_name = "casting_agency.db"
-# database_path = "postgres://{}:{}@{}/{}".format(
-#     'postgres', 'root', 'localhost:5432', database_name)
-SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL')
+# database_name = "casting_agency.db"
+# # database_path = "postgres://{}:{}@{}/{}".format(
+# #     'postgres', 'root', 'localhost:5432', database_name)
+# SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL')
 
-app = Flask(__name__)
-moment = Moment(app)
-app.config["SQLALCHEMY_DATABASE_URI"] = SQLALCHEMY_DATABASE_URI
-app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
-db = SQLAlchemy(app)
-migrate = Migrate(app, db)
+# app = Flask(__name__)
+# moment = Moment(app)
+# app.config["SQLALCHEMY_DATABASE_URI"] = SQLALCHEMY_DATABASE_URI
+# app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
+# db = SQLAlchemy(app)
+# migrate = Migrate(app, db)
 
 # from crypt import methods
 # import os
