@@ -6,7 +6,7 @@ from flask import Flask
 database_name = "casting_agency.db"
 # database_path = "postgres://{}:{}@{}/{}".format(
 #     'postgres', 'root', 'localhost:5432', database_name)
-SQLALCHEMY_DATABASE_URI = 'postgresql://postgres@localhost:5432/casting_agency'
+SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL')
 
 app = Flask(__name__)
 moment = Moment(app)
