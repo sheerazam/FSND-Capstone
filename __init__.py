@@ -2,6 +2,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from flask_moment import Moment
 from flask import Flask
+import os
 
 database_name = "casting_agency.db"
 # database_path = "postgres://{}:{}@{}/{}".format(
