@@ -14,7 +14,8 @@ from flask_migrate import Migrate
 from flask_moment import Moment
 from flask import Flask
 
-SQLALCHEMY_DATABASE_URI = 'postgresql://postgres@localhost:5432/casting_agency'
+# SQLALCHEMY_DATABASE_URI = 'postgresql://postgres@localhost:5432/casting_agency'
+os.environ.get('SQLALCHEMY_DATABASE_URI')
 
 # app = Flask(__name__)
 # moment = Moment(app)
