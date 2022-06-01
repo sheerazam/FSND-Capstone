@@ -113,6 +113,6 @@ For testing the backend, run the following commands (in the exact order):
 ```
 dropdb casting_agency
 createdb casting_agency
-psql casting_agency < casting.sql
+psql casting_agency < casting_agency.sql
 python test.py
 ```

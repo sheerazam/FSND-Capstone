@@ -9,12 +9,14 @@ import os
 #     'postgres', 'root', 'localhost:5432', database_name)
 # SQLALCHEMY_DATABASE_URI = 'postgresql://postgres@localhost:5432/casting_agency'
 
-app = Flask(__name__)
-moment = Moment(app)
-SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL')
-app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
-db = SQLAlchemy(app)
-migrate = Migrate(app, db)
+# app = Flask(__name__)
+# moment = Moment(app)
+# SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL')
+# app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
+# db = SQLAlchemy(app)
+# migrate = Migrate(app, db)
+
+db = SQLAlchemy()
 
 '''
  setup_db(app)
@@ -22,6 +24,9 @@ migrate = Migrate(app, db)
 '''
 
 def setup_db(app):
+    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL')
+    app.config["SQLALCHEMY_DATABASE_URI"] = SQLALCHEMY_DATABASE_URI
+    app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
     db.app = app
     db.init_app(app)
 
