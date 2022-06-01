@@ -37,7 +37,7 @@ def create_app(test_config=None):
     !! NOTE THIS MUST BE UNCOMMENTED ON FIRST RUN
     !! Running this function will add one
     '''
-    # db_drop_and_create_all()
+    db_drop_and_create_all()
 
     # ROUTES
 
