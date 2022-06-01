@@ -302,7 +302,7 @@ class CastingAgencyTestCase(unittest.TestCase):
         self.assertIn('message', data)
 
     def test_delete_movie_with_producer_token_should_return_true(self):
-        """DELETE /movies/<id> with producer token should delete a movie"""
+        """DELETE /movies/<id> with producer token should delete a movie """
         res = self.client().delete('/movies/2', headers={
             'Authorization': "Bearer {}".format(self.producer_token)
         })
